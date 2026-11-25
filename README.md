@@ -23,15 +23,15 @@ The project combines a React web UI with ESP-based hardware and a relay module. 
 
 ### Landing page
 
-![Wave Wizard landing page](docs/images/wave-wizard-landing.png)
+![Wave Wizard landing page](assets/Screenshorts/landing.png)
 
 ### Device dashboard
 
-![Wave Wizard device dashboard](docs/images/wave-wizard-dashboard.png)
+![Wave Wizard device dashboard](assets/Screenshorts/wave-wizard-dashboard.png)
 
 ### Hardware circuit diagram
 
-![Wave Wizard circuit diagram](docs/images/wave-wizard-circuit.png)
+![Wave Wizard circuit diagram](assets/Screenshorts/circuit_diagram.png)
 
 ## Hardware overview
 
