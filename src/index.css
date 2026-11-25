@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+
+.orbit {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  animation: rotateOrbit 20s linear infinite;
+  will-change: transform;
+}
+
+.orbit-image {
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  /* Reduced blur */
+  backdrop-filter: blur(3px);
+
+  /* Reduced shadow */
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+.orbit-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.image-1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.image-2 {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.image-3 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.image-4 {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes rotateOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wizard-glow {
+  animation: magicalGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes magicalGlow {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(218, 246, 59, 0.25)) drop-shadow(0 0 12px rgba(168, 85, 247, 0.15));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 15px rgba(237, 246, 59, 0.5)) drop-shadow(0 0 25px rgba(168, 85, 247, 0.35));
+  }
+}
+
+@media (max-width: 640px) {
+  .orbit {
+    width: 300px;
+    height: 300px;
+  }
+
+  .orbit-image {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+/* Respect users who prefer reduced animation */
+@media (prefers-reduced-motion: reduce) {
+
+  .orbit,
+  .wizard-glow {
+    animation: none !important;
+  }
+}

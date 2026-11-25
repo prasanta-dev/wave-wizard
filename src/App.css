@@ -1,0 +1,46 @@
+@keyframes alexaRGB {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.55;
+    filter: blur(35px);
+  }
+
+  25% {
+    background-position: 50% 50%;
+    opacity: 0.8;
+    filter: blur(42px);
+  }
+
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.65;
+    filter: blur(38px);
+  }
+
+  75% {
+    background-position: 50% 50%;
+    opacity: 0.85;
+    filter: blur(45px);
+  }
+
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.55;
+    filter: blur(35px);
+  }
+}
+
+.alexa-rgb-glow {
+  background: linear-gradient(
+    90deg,
+    #00eaff,
+    #008cff,
+    #9b5cff,
+    #ff42cf,
+    #00eaff
+  );
+
+  background-size: 300% 300%;
+  animation: alexaRGB 3s ease-in-out infinite;
+  will-change: background-position, opacity, filter;
+}
