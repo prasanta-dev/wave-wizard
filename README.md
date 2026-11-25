@@ -1,10 +1,24 @@
 # Wave Wizard — Smart Home Automation
 
+[![Live Preview](https://img.shields.io/badge/Live%20Preview-Open%20Website-blue?style=for-the-badge)](https://wave-wizard-sand.vercel.app/)
+
+**Live Website:** https://wave-wizard-sand.vercel.app/
+
 Wave Wizard is an IoT-based home automation project with a web interface for controlling household devices and viewing their states in a simulated living-room environment.
 
 The project combines a React web UI with ESP-based hardware and a relay module. The web dashboard is designed to control four device channels: a living-room light, ceiling fan, television, and speaker.
 
 > **Project note:** This repository presents the web-interface portion and hardware overview of the project. The ESP32 and ESP8266 Arduino (`.ino`) firmware files are not included in this public repository.
+
+## Live Preview
+
+Explore the deployed Wave Wizard website:
+
+**[🚀 Open Wave Wizard Live Demo](https://wave-wizard-sand.vercel.app/)**
+
+The live deployment lets visitors explore the landing page and smart-home dashboard.
+
+> **Note:** The website is deployed on Vercel. Physical device control depends on the ESP controller and network configuration. The current frontend uses local-network HTTP endpoints, so remote hardware control is not yet available through the public HTTPS deployment.
 
 ## Project highlights
 
@@ -180,6 +194,7 @@ Potential next steps for the project include:
 - Move the controller address into environment/configuration settings.
 - Add authentication and network-access controls before exposing the system beyond a trusted local network.
 - Document the ESP32/ESP8266 firmware and verified wiring/pin map if those details are later made public.
+- Implement secure cloud communication for remote device control.
 
 ## About this project
 
@@ -189,3 +204,5 @@ Wave Wizard was developed as an IoT / home-automation project and is also being 
 
 **Author:** Prasanta Debnath  
 **Project:** Wave Wizard — Smart Home Automation
+
+**Live Demo:** https://wave-wizard-sand.vercel.app/

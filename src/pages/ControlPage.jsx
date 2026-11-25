@@ -13,66 +13,6 @@ function ControlPage() {
     const [fanOn, setFanOn] = useState(false)
     const [tvOn, setTvOn] = useState(false)
     const [musicOn, setMusicOn] = useState(false)
-    // const [loadingDevices, setLoadingDevices] = useState({});
-
-   
-const toggleWork = async (device) => {
-    const deviceConfig = {
-        yellow: {
-            state: lightOn,
-            setState: setLightOn,
-            onUrl: "http://192.168.4.1/relayon1",
-            offUrl: "http://192.168.4.1/relayoff1",
-        },
-        cyan: {
-            state: fanOn,
-            setState: setFanOn,
-            onUrl: "http://192.168.4.1/relayon2",
-            offUrl: "http://192.168.4.1/relayoff2",
-        },
-        violet: {
-            state: tvOn,
-            setState: setTvOn,
-            onUrl: "http://192.168.4.1/relayon3",
-            offUrl: "http://192.168.4.1/relayoff3",
-        },
-        pink: {
-            state: musicOn,
-            setState: setMusicOn,
-            onUrl: "http://192.168.4.1/relayon4",
-            offUrl: "http://192.168.4.1/relayoff4",
-        },
-    };
-
-    const selected = deviceConfig[device];
-    if (!selected) return;
-
-    const nextState = !selected.state;
-    const url = nextState ? selected.onUrl : selected.offUrl;
-
-    // Update UI immediately
-    selected.setState(nextState);
-
-    try {
-        const response = await fetch(url, {
-            method: "GET",
-            cache: "no-store",
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        console.log(`${device} is now ${nextState ? "ON" : "OFF"}`);
-
-    } catch (error) {
-        console.error("Device request failed:", error);
-
-        // Restore previous UI state if request fails
-        selected.setState(!nextState);
-    }
-};
-
 
     const devices = [
         {
@@ -80,7 +20,7 @@ const toggleWork = async (device) => {
             subtitle: 'Ambient lighting',
             icon: <GiLightBulb />,
             on: lightOn,
-            toggle: () => toggleWork('yellow'),
+            toggle: () => setLightOn(prev => !prev),
             color: 'yellow',
         },
         {
@@ -88,7 +28,7 @@ const toggleWork = async (device) => {
             subtitle: 'Air circulation',
             icon: <FaFan />,
             on: fanOn,
-            toggle: () => toggleWork('cyan'),
+            toggle: () => setFanOn(prev => !prev),
             color: 'cyan',
         },
         {
@@ -96,7 +36,7 @@ const toggleWork = async (device) => {
             subtitle: 'Entertainment',
             icon: <FaTv />,
             on: tvOn,
-            toggle: () => toggleWork('violet'),
+            toggle: () => setTvOn(prev => !prev),
             color: 'violet',
         },
         {
@@ -104,7 +44,7 @@ const toggleWork = async (device) => {
             subtitle: 'Audio system',
             icon: <FaMusic />,
             on: musicOn,
-            toggle: () => toggleWork('pink'),
+            toggle: () => setMusicOn(prev => !prev),
             color: 'pink',
         },
     ];
